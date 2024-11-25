@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <div class="form-header">
+                <h2 id="form-title">Login</h2>
+                <p id="toggle-link" onclick="toggleForm()">Don't have an account? Signup</p>
+            </div>
+            <!-- Login Form -->
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p><a href="#" onclick="showForgetPassword()">Forgot Password?</a></p>
+            </form>
+            <!-- Signup Form -->
+            <form id="signup-form" style="display: none;">
+                <input type="text" id="signup-name" placeholder="Name" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <div id="password-requirements">
+                    <p id="min-char" class="requirement"><span>❌</span> Minimum 8 Characters</p>
+                    <p id="special-char" class="requirement"><span>❌</span> 1 Special Character</p>
+                    <p id="number-char" class="requirement"><span>❌</span> Number Included</p>
+                    <p id="uppercase-char" class="requirement"><span>❌</span> 1 Uppercase Letter</p>
+                    <p id="lowercase-char" class="requirement"><span>❌</span> 1 Lowercase Letter</p>
+                </div>
+                <button type="submit" disabled id="signup-button">Signup</button>
+            </form>
+            
+            <!-- Forget Password Form -->
+            <form id="forget-password-form" style="display: none;">
+                <input type="email" id="forget-email" placeholder="Enter your email" required>
+                <button type="submit">Submit</button>
+                <p><a href="#" onclick="toggleForm()">Back to Login</a></p>
+            </form>
+            <div class="social-auth">
+                <button class="google">Login with Google</button>
+                <button class="facebook">Login with Facebook</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
